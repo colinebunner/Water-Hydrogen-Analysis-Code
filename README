@@ -1,0 +1,28 @@
+This is simulation analysis code written by Colin Bunner for a paper
+on supercritical phase separations in water/hydrogen mixtures. This 
+might be updated with a DOI later when the paper is published.
+
+Notes:
+
+- The Fortran subroutines are not complete programs, but rather analyze
+  single frames and were wrapped into Python codes using f2py. Histogram
+  normalization that can be done once on all frames (i.e. dividing by the 
+  histogram bin volume) was done in the Python scripts, so if it appears 
+  that something is missing, keep this in mind.
+
+- The Python programs that handled the full ensemble averages have
+  been omitted because they mostly involve file i/o. If you have 
+  questions about how to properly wrap the Fortran subroutines into
+  a Python program and use these single frame analysis tools for
+  ensemble averages over multiple frames, feel free to e-mail me at
+  bunne043@umn.edu
+
+- The cluster analysis Python script is dreadfully slow and unorganized.
+  I've included it mostly so that people can see how to, for example,
+  implement an elliptical H-bond cutoff or generally approach their
+  own cluster analysis program. More computationally efficient
+  algorithms can almost certainly be found in the literature.
+
+- In general, I hope this repository makes it explicitly clear how
+  simulation analysis was handled and aids peers in writing analysis
+  codes for open ensembles.
